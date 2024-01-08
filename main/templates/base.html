@@ -7,7 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'vendor/bs4/bootstrap.min.css' %}" />
 	<!-- Main CSS -->
 	<link rel="stylesheet" href="{% static 'vendor/css/main.css' %}">
-		<script type="text/javascript" src=" { static 'vendor/aos/aos.css' %}"></script>
+	<script type="text/javascript" src=" { static 'vendor/aos/aos.css' %}"></script>
 	<!-- Main Jquery -->
 	<script type="text/javascript" src="/main/static/vendor/css/main.css"></script>
 	<!-- Bootstrap Js -->
@@ -17,11 +17,11 @@
 <!-- ======= Header ======= -->
 <header id="header" class="fixed-top">
 	<div class="container d-flex align-items-center">
-		<!-- <h1 class="logo me-auto"><a href="index.html">Brendýoly</a></h1> -->
+		<h1 class="logo me-auto"><a href="index.html">Brendýoly</a></h1>
 		<!-- Uncomment below if you prefer to use an image logo -->
-		<a href="index.html" class="logo me-auto"><img src="/media/logo/Brendýoly Kompaniýa wariant 6.png" alt="" class="img-fluid"></a>
+		<!-- <a href="index.html" class="logo me-auto"><img src="/media/logo/Brendýoly Kompaniýa wariant 6.png" alt="" class="img-fluid"></a> -->
 
-		<nav id="navbar" class="navbar order-last order-lg-0">
+		<nav id="navbar" class="navbar">
 			<ul>
 				<li><a class="active" href="index.html">Home</a></li>
 				<li><a href="about.html">About</a></li>
@@ -55,7 +55,9 @@
 
 	</div>
 </header>
-    
+    <!-- End Header -->
+
+
     {% block content %}
     {% endblock %}
 
