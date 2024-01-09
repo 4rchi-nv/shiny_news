@@ -393,3 +393,9 @@ text-decoration: none;
   text-decoration: none;
 }
 /* Footer end */
+
+/* Home Main */
+
+.container_main{
+  margin-top: 140px !important;
+}

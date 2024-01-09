@@ -6,10 +6,10 @@
 	<!-- Bootstrap 4 CSS -->
 	<link rel="stylesheet" type="text/css" href="{% static 'vendor/bs4/bootstrap.min.css' %}" />
 	<!-- Main CSS -->
-	<link rel="stylesheet" src=" {% static 'vendor/aos/aos.css' %}"></link>
+	<link rel="stylesheet" src=" {% static 'vendor/aos/aos.css' %}">
 	<link rel="stylesheet" href="{% static 'vendor/css/main.css' %}">
 	<!-- Main Jquery -->
-	<script type="text/javascript" src="/main/static/vendor/css/main.css"></script>
+	<script type="text/javascript" src="{% static '/vendor/css/main.css %' }"></script>
 	<!-- Bootstrap Js -->
 	<script type="text/javascript" src="{% static '/vendor/bs4/bootstrap.min.js' %}"></script>
 </head>
@@ -25,9 +25,9 @@
     <div class="nav-right">
 		<nav id="navbar" class="navbar">
 			<ul>
-				<li><a class="active" href="index.html">Esasy sahypa</a></li>
-				<li><a href="about.html">Biz Barada</a></li>
-				<li><a href="trainers.html">Ähli täzelikler</a></li>
+				<li><a class="active" href="#">Esasy sahypa</a></li>
+				<li><a href="">Biz Barada</a></li>
+				<li><a href="">Ähli täzelikler</a></li>
 				<li class="dropdown"><a href="#"><span>Hyzmatlarymyz</span> <i class="bi bi-chevron-down"></i></a>
 					<ul>
 						<li><a href="#">Gozgalmaýan emläk</a></li>
@@ -44,7 +44,7 @@
 						<li><a href="#">Iş agentligi</a></li>
 					</ul>
 				</li>
-				<li><a href="contact.html">Habarlaşmak</a></li>
+				<li><a href="#">Habarlaşmak</a></li>
 			</ul>
 			<i class="bi bi-list mobile-nav-toggle"></i>
 		</nav>
