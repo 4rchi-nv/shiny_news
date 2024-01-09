@@ -6,8 +6,8 @@
 	<!-- Bootstrap 4 CSS -->
 	<link rel="stylesheet" type="text/css" href="{% static 'vendor/bs4/bootstrap.min.css' %}" />
 	<!-- Main CSS -->
+	<link rel="stylesheet" src=" {% static 'vendor/aos/aos.css' %}"></link>
 	<link rel="stylesheet" href="{% static 'vendor/css/main.css' %}">
-	<script type="text/javascript" src=" { static 'vendor/aos/aos.css' %}"></script>
 	<!-- Main Jquery -->
 	<script type="text/javascript" src="/main/static/vendor/css/main.css"></script>
 	<!-- Bootstrap Js -->
@@ -16,11 +16,13 @@
 <body>
 <!-- ======= Header ======= -->
 <header id="header" class="fixed-top">
-	<div class="container d-flex align-items-center">
+	<div class="container flexhead align-items-center">
+    <div class="logo-left">
 		<h1 class="logo me-auto"><a href="index.html">Brendýoly</a></h1>
 		<!-- Uncomment below if you prefer to use an image logo -->
 		<!-- <a href="index.html" class="logo me-auto"><img src="/media/logo/Brendýoly Kompaniýa wariant 6.png" alt="" class="img-fluid"></a> -->
-
+    </div><!--logo-->
+    <div class="nav-right">
 		<nav id="navbar" class="navbar">
 			<ul>
 				<li><a class="active" href="index.html">Esasy sahypa</a></li>
@@ -45,7 +47,8 @@
 				<li><a href="contact.html">Habarlaşmak</a></li>
 			</ul>
 			<i class="bi bi-list mobile-nav-toggle"></i>
-		</nav><!-- .navbar -->
+		</nav>
+    </div><!-- .navbar -->
 
 	</div>
 </header>
