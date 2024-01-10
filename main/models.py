@@ -5,7 +5,7 @@ class Category(models.Model):
     category_image=models.ImageField(upload_to='imgs/')
 
     class Meta:
-        verbose_name_plural='Categories'
+        verbose_name_plural='Категории'
 
     def __str__(self):
         return self.title
@@ -19,7 +19,21 @@ class News(models.Model):
     add_time=models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        verbose_name_plural='News'
+        verbose_name_plural='Новости'
+
+    def __str__(self):
+        return self.title
+    
+class Work(models.Model):
+    category=models.ForeignKey(Category,on_delete=models.CASCADE)
+    title=models.CharField(max_length=300)
+    price=models.FloatField()
+    image=models.ImageField(upload_to='imgs/')
+    detail=models.TextField()
+    add_time=models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name_plural='Работа'
 
     def __str__(self):
         return self.title
