@@ -179,17 +179,22 @@
     </section><!-- End Features Section -->
 
 <!-- News Main -->
-<main class="container mt-3 mb-5 container_main_home">
+<section id="popular-courses" class="courses">
+<main class="container mt-3 mb-5 container_main_home" data-aos="fade-up">
+		<div class="section-title">
+			<h2>Täzelikler</h2>
+			<p>Iň soňkular</p>
+		</div>
 	<!-- featured news -->
-	<div class="row my-3">
-		<!-- Left -->
-		<div class="col-md-7">
-			<div class="card mb-3">
-			  <img src="media/{{first_news.image}}" class="card-img-top" alt="{{first_news.title}}">
-			  <div class="card-body">
+	<div class="row" data-aos="zoom-in" data-aos-delay="100">
+		<div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+			<div class="course-item">
+			  <img src="media/{{first_news.image}}" class="img-fluid" alt="{{first_news.title}}">
+			  <div class="course-content">
 			    <h5 class="card-title">{{first_news.title}}</h5>
-			    <hr/>
-			    <p class="card-text"><a href="/detail/{{first_news.id}}" class="btn btn-sm btn-success">Read Full</a></p>
+				<div class="d-flex justify-content-between align-items-center mb-3">
+			    <h4><a href="/detail/{{first_news.id}}">Read Full</a></h4>
+				</div>
 			  </div>
 			</div>
 		</div>
@@ -214,6 +219,7 @@
 			{% endfor %}
 		</div>
 	</div>
+	</section>	
 	<!-- Category Wise News -->
 	{% for category in three_categories %}
 	<h3 class="border-bottom pb-1">{{category.title}} <a href="/category/{{category.id}}" class="float-right btn btn-sm btn-dark">Kategoriýa girmek</a></h3>
