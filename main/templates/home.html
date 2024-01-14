@@ -178,69 +178,66 @@
       </div>
     </section><!-- End Features Section -->
 
-<!-- News Main -->
-<section id="popular-courses" class="courses">
-<main class="container mt-3 mb-5 container_main_home" data-aos="fade-up">
-		<div class="section-title">
-			<h2>Täzelikler</h2>
-			<p>Iň soňkular</p>
-		</div>
-	<!-- featured news -->
-	<div class="row" data-aos="zoom-in" data-aos-delay="100">
-		<div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-			<div class="course-item">
-			  <img src="media/{{first_news.image}}" class="img-fluid" alt="{{first_news.title}}">
-			  <div class="course-content">
-			    <h5 class="card-title">{{first_news.title}}</h5>
-				<div class="d-flex justify-content-between align-items-center mb-3">
-			    <h4><a href="/detail/{{first_news.id}}">Read Full</a></h4>
-				</div>
-			  </div>
+	<!-- ======= Popular Courses Section ======= -->
+	<section id="popular-courses" class="courses">
+		<div class="container" data-aos="fade-up">
+	
+			<div class="section-title">
+				<h2>Täzelikler</h2>
+				<p>Iň soňkular</p>
+			</div>
+	
+			<div class="row" data-aos="zoom-in" data-aos-delay="100">
+	
+				<div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+					<div class="course-item">
+						<img src="media/{{first_news.image}}" class="img-fluid" alt="...">
+						<div class="course-content">
+							<div class="d-flex justify-content-between align-items-center mb-3">
+								<h4>Lorem, ipsum.</h4>
+								<p class="price">$169</p>
+							</div>
+	
+							<h3><a href="course-details.html">{{first_news.title}}</a></h3>
+							<p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores
+								dolorem tempore.</p>
+						</div>
+					</div>
+				</div> <!-- End Course Item-->
+	
+				<div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
+					<div class="course-item">
+						<img src="media/{{news.image}}" class="img-fluid" alt="...">
+						<div class="course-content">
+							<div class="d-flex justify-content-between align-items-center mb-3">
+								<h4>Lorem.</h4>
+								<p class="price">$250</p>
+							</div>
+	
+							<h3><a href="course-details.html">Search Engine Optimization</a></h3>
+							<p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores
+								dolorem tempore.</p>
+						</div>
+					</div>
+				</div> <!-- End Course Item-->
+	
+				<div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+					<div class="course-item">
+						<img src="assets/img/course-3.jpg" class="img-fluid" alt="...">
+						<div class="course-content">
+							<div class="d-flex justify-content-between align-items-center mb-3">
+								<h4>Lorem, ipsum.</h4>
+								<p class="price">$180</p>
+							</div>
+	
+							<h3><a href="course-details.html">Copywriting</a></h3>
+							<p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores
+								dolorem tempore.</p>
+						</div>
+					</div>
+				</div> <!-- End Course Item-->
+
 			</div>
 		</div>
-		<!-- Right -->
-		<div class="col-md-5" style="max-height: 450px; overflow: auto;">
-			{% for news in three_news %}
-			<!-- News Box -->
-			<div class="card">
-			  <div class="row no-gutters">
-			    <div class="col-md-4">
-					<img src="media/{{news.image}}" class="card-img-top" alt="{{news.title}}">
-			    </div>
-			    <div class="col-md-8">
-			      <div class="card-body">
-			        <h5 class="card-title">{{news.title}}</h5>
-			        <p class="card-text"><a href="/detail/{{news.id}}" class="btn btn-sm btn-success">Doly görmek</a></p>
-			      </div>
-			    </div>
-			  </div>
-			</div>
-			<hr/>
-			{% endfor %}
-		</div>
-	</div>
-	</section>	
-	<!-- Category Wise News -->
-	{% for category in three_categories %}
-	<h3 class="border-bottom pb-1">{{category.title}} <a href="/category/{{category.id}}" class="float-right btn btn-sm btn-dark">Kategoriýa girmek</a></h3>
-	<div class="row my-4">
-		{% for news in category.news_set.all %}
-			{% if forloop.counter < 5 %}
-			<!-- News box -->
-			<div class="col-md-3">
-				<div class="card mb-3 shadow">
-				<img src="/media/{{news.image}}" class="card-img-top" alt="{{news.title}}">
-				<div class="card-body">
-					<h5 class="card-title">{{news.title}}</h5>
-					<hr/>
-					<p class="card-text"><a href="#" class="btn btn-sm btn-success">Doly görmek</a></p>
-				</div>
-				</div>
-			</div>
-			{% endif %}
-		{% endfor %}
-	</div>
-	{% endfor %}
-	<!-- End Single Category -->
-</main>
+	</section><!-- End Popular Courses Section -->
 {% endblock %}
