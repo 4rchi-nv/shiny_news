@@ -717,6 +717,14 @@ section {
 .courses .course-item {
   border-radius: 5px;
   border: 1px solid #eef0ef;
+  box-shadow: 10px 0 20px #ccc;
+  margin-bottom: 20px;
+  width: 100%;
+}
+.courses .course-item .img-fluid{
+  width: 100%;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
 }
 
 .courses .course-content {
