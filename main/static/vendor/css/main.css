@@ -721,7 +721,7 @@ section {
   margin-bottom: 20px;
   width: 100%;
 }
-.courses .course-item .img-fluid{
+.courses .course-item .img-fluid {
   width: 100%;
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
@@ -752,7 +752,7 @@ section {
   color: #777777;
 }
 
-.courses .course-content h4 {
+.courses .course-content h4{
   font-size: 14px;
   background: #5fcf80;
   padding: 7px 14px;
@@ -858,4 +858,20 @@ section {
 
 .events .card:hover .card-body .card-title a {
   color: #5fcf80;
+}
+
+/* ========CategoryAll====== */
+.categoryAll .card .button {
+  font-size: 14px;
+  background: #5fcf80;
+  padding: 7px 14px;
+  color: #fff;
+  margin: 0;
+}
+.categoryAll .card img {
+  width: 100%;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  height: 250px;
+  object-fit: cover;
 }
