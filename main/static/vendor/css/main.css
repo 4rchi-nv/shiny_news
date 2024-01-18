@@ -861,6 +861,9 @@ section {
 }
 
 /* ========CategoryAll====== */
+.categoryAll {
+  margin-top: 7rem;
+}
 .categoryAll .card .button {
   font-size: 14px;
   background: #5fcf80;
@@ -874,4 +877,8 @@ section {
   border-bottom-left-radius: 5px;
   height: 250px;
   object-fit: cover;
+}
+/* =======Details========== */
+.detailContainer {
+  margin-top: 7rem;
 }
