@@ -725,6 +725,8 @@ section {
   width: 100%;
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
+  height: 250px;
+  object-fit: cover;
 }
 
 .courses .course-content {
