@@ -1,14 +1,17 @@
 from django.contrib import admin
-from .models import Category,News,Comment,Work
 
-admin.site.register(Category)
+from django.contrib import admin
+from .models import Category, News
 
-class AdminNews(admin.ModelAdmin):
-    list_display=('title','category','add_time')
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ['name', 'slug']
+    prepopulated_fields = {'slug': ('name',)}
 
-admin.site.register(News,AdminNews)
-admin.site.register(Work,AdminNews)
-
-class AdminComment(admin.ModelAdmin):
-    list_display=('news','email','comment','status')
-admin.site.register(Comment,AdminComment)
+@admin.register(News)
+class NewsAdmin(admin.ModelAdmin):
+    list_display = ['name', 'slug', 'price',
+                    'available', 'created', 'updated']
+    list_filter = ['available', 'created', 'updated']
+    list_editable = ['price', 'available']
+    prepopulated_fields = {'slug': ('name',)}

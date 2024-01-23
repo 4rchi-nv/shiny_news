@@ -1,13 +1,13 @@
+from django.contrib import admin
 from django.urls import path
-
 from django.conf import settings
 from django.conf.urls.static import static
+from .views import home, detail, category_news, all_news, about
 
-from . import views
-urlpatterns=[
-    path('',views.home,name='home'),
-    path('all-news',views.all_news,name='all-news'),
-    path('detail/<int:id>',views.detail,name='detail'),
-    path('all-category',views.all_category,name='all-category'),
-    path('category/<int:id>',views.category,name='category'),
+urlpatterns = [
+    path('home/', home, name='home'),
+    path('detail/<str:slug>/', detail, name='detail'),
+    path('category_news/<str:slug>/', category_news, name='category_news'),
+    path('all_news/', all_news, name='all_news'),
+    path('about/', about, name='about'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

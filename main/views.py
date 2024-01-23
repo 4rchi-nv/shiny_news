@@ -1,60 +1,39 @@
-from django.shortcuts import render,redirect
-from django.contrib import messages
-from .models import News, Category,Comment
+from django.shortcuts import render
+
+from .models import Category, News
+from helpers.shortcuts import get_object_from_qs_or_404
+
+
 def home(request):
-    first_news=News.objects.first()
-    three_news=News.objects.all()[1:3]
-    three_categories=Category.objects.all()[0:3]
-    return render(request,'home.html',{
-        'first_news':first_news,
-        'three_news':three_news,
-        'three_categories':three_categories
-    })
+    four_categories = Category.objects.all()[0:4]
+    context = {'four_categories': four_categories}
+    return render(request, 'home.html', context)
 
-# All News
+def detail(request, slug):
+    qs = News.objects.all()
+    news = get_object_from_qs_or_404(qs, slug=slug)
+    context = {
+        "news": news
+    }
+    return render(request, 'detail.html', context)
+
+def category_news(request, slug):
+    qs = Category.objects.all()
+    category = get_object_from_qs_or_404(qs, slug=slug)
+    all_news = category.news.all()
+    context = {
+        "category": category,
+        "all_news": all_news
+    }
+    return render(request, 'category-news.html', context)
+
 def all_news(request):
-    all_news=News.objects.all()
-    return render(request,'all-news.html',{
-        'all_news':all_news
-    })
+    twenty_news = News.objects.all()[0:21]
+    context = {'twenty_news': twenty_news}
+    return render(request, 'all-news.html', context)
 
-# Detail Page
-def detail(request,id):
-    news=News.objects.get(pk=id)
-    if request.method=='POST':
-        name=request.POST['name']
-        email=request.POST['email']
-        comment=request.POST['message']
-        Comment.objects.create(
-            news=news,
-            name=name,
-            email=email,
-            comment=comment
-        )
-        messages.success(request,'Comment submitted but in moderation mode.')
-    category=Category.objects.get(id=news.category.id)
-    rel_news=News.objects.filter(category=category).exclude(id=id)
-    comments=Comment.objects.filter(news=news,status=True).order_by('-id')
-    return render(request,'detail.html',{
-        'news':news,
-        'related_news':rel_news,
-        'comments':comments
-    })
-
-# Fetch all category
-def all_category(request):
-    cats=Category.objects.all()
-    return render(request,'category.html',{
-        'cats':cats
-    })
+def about(request):
+    return render(request, 'about.html')
 
 
-# Fetch all category
-def category(request,id):
-    category=Category.objects.get(id=id)
-    news=News.objects.filter(category=category)
-    return render(request,'category-news.html',{
-        'all_news':news,
-        'category':category
-    })
 

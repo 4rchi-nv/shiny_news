@@ -28,16 +28,14 @@
 <header id="header" class="fixed-top">
 	<div class="container flexhead d-flex align-items-center justify-content-between">
     <div class="logo-left">
-		<h1 class="logo me-auto"><a href="index.html">Brendýoly</a></h1>
-		<!-- Uncomment below if you prefer to use an image logo -->
-		<!-- <a href="index.html" class="logo me-auto"><img src="/media/logo/Brendýoly Kompaniýa wariant 6.png" alt="" class="img-fluid"></a> -->
-    </div><!--logo-->
+		<h1 class="logo me-auto"><a href={% url 'home' %}>Brendýoly</a></h1>
+    </div>
     <div class="nav-right">
 		<nav id="navbar" class="navbar">
 			<ul>
-				<li><a class="active" href="#">Esasy sahypa</a></li>
-				<li><a href="">Biz Barada</a></li>
-				<li><a href="">Ähli täzelikler</a></li>
+				<li><a class="active" href={% url 'home' %}>Esasy sahypa</a></li>
+				<li><a href={% url 'about' %}>Biz Barada</a></li>
+				<li><a href={% url 'all_news' %}>Ähli täzelikler</a></li>
 				<li class="dropdown"><a href="#"><span>Hyzmatlarymyz</span> <i class="bi bi-chevron-down"></i></a>
 					<ul>
 						<li><a href="#">Gozgalmaýan emläk</a></li>
@@ -89,8 +87,8 @@
           <div class="col-lg-4 col-md-4 footer-links">
             <h4>Gerekli salgylanmalar</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Esasy</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Biz barada</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href={% url 'home' %}>Esasy hasypa</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href={% url 'about' %}>Biz barada</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Hyzmatlar</a></li>
             </ul>
           </div>
