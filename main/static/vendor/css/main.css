@@ -803,7 +803,8 @@ section {
   margin-left: -30px;
   overflow: hidden;
   z-index: 9;
-  border-radius: 0;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
 }
 
 .events .card-img img {
@@ -819,6 +820,8 @@ section {
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
   margin-top: -60px;
   transition: 0.3s;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
 }
 
 .events .card-title {
