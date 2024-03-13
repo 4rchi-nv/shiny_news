@@ -1,36 +1,37 @@
 from django.db import models
 
 class Category(models.Model):
-    title=models.CharField(max_length=200)
-    category_image=models.ImageField(upload_to='imgs/')
-
+    name = models.CharField(max_length=200)
+    image = models.ImageField(upload_to='media/')
+    slug = models.SlugField(max_length=200, unique=True)
+    
     class Meta:
-        verbose_name_plural='Categories'
+        ordering = ['name']
+        verbose_name = 'category'
+        verbose_name_plural = 'categories'
+
 
     def __str__(self):
-        return self.title
+        return f"{self.id}. {self.name}"
 
-# News Model
+
 class News(models.Model):
-    category=models.ForeignKey(Category,on_delete=models.CASCADE)
-    title=models.CharField(max_length=300)
-    image=models.ImageField(upload_to='imgs/')
-    detail=models.TextField()
-    add_time=models.DateTimeField(auto_now_add=True)
+    category = models.ForeignKey(Category, related_name='news', on_delete=models.CASCADE)
+    name = models.CharField(max_length=200)
+    slug = models.SlugField(max_length=200, unique=True)
+    description = models.TextField(blank=True)
+    image1 = models.ImageField(upload_to='media/', null=True)
+    image2 = models.ImageField(upload_to='media/', null=True, blank=True)
+    image3 = models.ImageField(upload_to='media/', null=True, blank=True)
+    image4 = models.ImageField(upload_to='media/', null=True, blank=True)
+    image5 = models.ImageField(upload_to='media/', null=True, blank=True)
+    price = models.DecimalField(max_digits=10, decimal_places=2, null=True)
+    available = models.BooleanField(default=True)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
 
     class Meta:
-        verbose_name_plural='News'
-
+        ordering = ['-created']
+        
     def __str__(self):
-        return self.title
-
-# Comments
-class Comment(models.Model):
-    news=models.ForeignKey(News,on_delete=models.CASCADE)
-    name=models.CharField(max_length=100)
-    email=models.CharField(max_length=200)
-    comment=models.TextField()
-    status=models.BooleanField(default=False)
-
-    def __str__(self):
-        return self.comment
+        return self.name
